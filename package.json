@@ -18,6 +18,11 @@
   },
   "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81",
   "devDependencies": {
+    "@iconify-json/fa-solid": "^1.2.1",
+    "@iconify-json/fa6-solid": "^1.2.3",
+    "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/material-symbols": "^1.2.12",
+    "@iconify-json/mdi": "^1.2.2",
     "@kaokei/di": "^2.0.9",
     "@kaokei/use-vue-service": "^2.0.5",
     "@nuxtjs/tailwindcss": "^6.12.2",
@@ -39,11 +44,12 @@
     "mitt": "^3.0.1",
     "nanoid": "^5.0.9",
     "nuxt": "^3.14.1592",
-    "nuxt-svgo": "4.0.9",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "query-string": "^8.2.0",
     "reflect-metadata": "^0.2.2",
+    "unplugin-icons": "^0.22.0",
+    "unplugin-vue-components": "^0.28.0",
     "vue": "latest",
     "vue-router": "latest"
   }

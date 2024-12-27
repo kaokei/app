@@ -1,4 +1,16 @@
+import fs from 'node:fs';
+import {
+  ExternalPackageIconLoader,
+  FileSystemIconLoader,
+} from 'unplugin-icons/loaders';
+import IconsResolver from 'unplugin-icons/resolver';
+import ViteIcons from 'unplugin-icons/vite';
+import ViteComponents from 'unplugin-vue-components/vite';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// https://github.com/unplugin/unplugin-icons/blob/main/examples/vite-vue3/vite.config.ts
+// https://icones.js.org/
+// https://icon-sets.iconify.design/
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -26,6 +38,30 @@ export default defineNuxtConfig({
       // https://github.com/nuxt/nuxt/issues/21756#issuecomment-1846568373
       tsconfigRaw: {},
     },
+    plugins: [
+      ViteIcons({
+        compiler: 'vue3',
+        autoInstall: true,
+        customCollections: {
+          local: FileSystemIconLoader('assets/svg'),
+          ...ExternalPackageIconLoader('@test-scope/test-color-icons'),
+          ...ExternalPackageIconLoader('plain-color-icons'),
+        },
+      }),
+      ViteComponents({
+        dts: true,
+        resolvers: [
+          IconsResolver({
+            strict: true,
+            customCollections: [
+              'local',
+              'plain-color-icons',
+              'test-color-icons',
+            ],
+          }),
+        ],
+      }),
+    ],
   },
   nitro: {
     moduleSideEffects: ['reflect-metadata'],
@@ -67,15 +103,10 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/tailwindcss', 'dayjs-nuxt', 'nuxt-svgo'],
+  modules: ['@nuxtjs/tailwindcss', 'dayjs-nuxt', 'unplugin-icons/nuxt'],
   dayjs: {
     locales: ['zh-cn'],
     plugins: ['relativeTime', 'duration', 'advancedFormat'],
     defaultLocale: 'zh-cn',
-  },
-  svgo: {
-    componentPrefix: 'i',
-    autoImportPath: './assets/svg/',
-    defaultImport: 'component',
   },
 });

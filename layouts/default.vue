@@ -10,11 +10,11 @@
             aria-label="open sidebar"
             class="btn btn-square btn-ghost"
           >
-            <i-bar3 class="size-6 stroke-current" />
+            <i-local-bar3 class="size-6 stroke-current" />
           </label>
         </div>
         <NuxtLink class="btn btn-ghost" to="/">
-          <i-logo class="h-8" />
+          <i-local-logo class="size-8" />
           <span>kaokei</span>
         </NuxtLink>
         <div class="ml-auto hidden flex-none lg:block">

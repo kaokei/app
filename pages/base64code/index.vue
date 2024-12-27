@@ -118,7 +118,7 @@ const handleMousedown2 = (e: any) => {
             class="btn btn-success flex flex-1"
             @click="handleCopy1"
           >
-            <i-copy class="size-6" />
+            <i-local-copy class="size-6" />
             <span>{{ model.copyTooltipInput }}</span>
           </button>
           <button
@@ -126,7 +126,7 @@ const handleMousedown2 = (e: any) => {
             class="btn flex flex-1"
             @click="handleEmpty1"
           >
-            <i-clear class="size-6" />
+            <i-local-clear class="size-6" />
             <span>清空</span>
           </button>
         </div>
@@ -142,7 +142,7 @@ const handleMousedown2 = (e: any) => {
         <button class="btn btn-primary" @click="handleEncode">编码</button>
         <button class="btn btn-secondary" @click="handleDecode">解码</button>
         <button class="btn btn-neutral" @click="handleSwap">
-          <i-swap class="size-6 rotate-90 lg:rotate-0" />
+          <i-local-swap class="size-6 rotate-90 lg:rotate-0" />
         </button>
       </div>
       <div class="flex-grow lg:w-0">
@@ -152,7 +152,7 @@ const handleMousedown2 = (e: any) => {
             class="btn btn-success flex flex-1"
             @click="handleCopy2"
           >
-            <i-copy class="size-6" />
+            <i-local-copy class="size-6" />
             <span>{{ model.copyTooltipOutput }}</span>
           </button>
           <button
@@ -160,7 +160,7 @@ const handleMousedown2 = (e: any) => {
             class="btn flex flex-1"
             @click="handleEmpty2"
           >
-            <i-clear class="size-6" />
+            <i-local-clear class="size-6" />
             <span>清空</span>
           </button>
         </div>

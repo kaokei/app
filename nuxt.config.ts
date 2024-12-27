@@ -67,10 +67,15 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/tailwindcss', 'dayjs-nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'dayjs-nuxt', 'nuxt-svgo'],
   dayjs: {
     locales: ['zh-cn'],
     plugins: ['relativeTime', 'duration', 'advancedFormat'],
     defaultLocale: 'zh-cn',
+  },
+  svgo: {
+    componentPrefix: 'i',
+    autoImportPath: './assets/svg/',
+    defaultImport: 'component',
   },
 });

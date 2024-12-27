@@ -10,23 +10,11 @@
             aria-label="open sidebar"
             class="btn btn-square btn-ghost"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block h-6 w-6 stroke-current"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+            <i-bar3 class="size-6 stroke-current" />
           </label>
         </div>
         <NuxtLink class="btn btn-ghost" to="/">
-          <img src="~/assets/image/logo.svg" alt="logo" class="h-8" />
+          <i-logo class="h-8" />
           <span>kaokei</span>
         </NuxtLink>
         <div class="ml-auto hidden flex-none lg:block">
@@ -39,9 +27,7 @@
               <NuxtLink class="btn btn-ghost" to="/gzip">GZIP</NuxtLink>
             </li>
             <li>
-              <NuxtLink class="btn btn-ghost" to="/urlcode"
-                >URL编解码</NuxtLink
-              >
+              <NuxtLink class="btn btn-ghost" to="/urlcode">URL编解码</NuxtLink>
             </li>
             <li>
               <NuxtLink class="btn btn-ghost" to="/base64code"
@@ -57,9 +43,7 @@
               <NuxtLink class="btn btn-ghost" to="/jslint">JS格式化</NuxtLink>
             </li>
             <li>
-              <NuxtLink class="btn btn-ghost" to="/csslint"
-                >CSS格式化</NuxtLink
-              >
+              <NuxtLink class="btn btn-ghost" to="/csslint">CSS格式化</NuxtLink>
             </li>
           </ul>
         </div>

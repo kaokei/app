@@ -67,3 +67,9 @@ star偏低，而且目前还只支持codemiror@5
 ## 编辑器对比
 
 https://blog.replit.com/code-editors
+
+## 参考工具网站
+
+https://toolbox.googleapps.com/apps/encode_decode/
+
+https://endecode.org/

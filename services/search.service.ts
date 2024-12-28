@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator';
+import { boundMethod } from 'autobind-decorator';
 import { Injectable } from '@kaokei/use-vue-service';
 import { cloneDeep } from 'lodash-es';
 import type { Pagination } from '~/types/common';
@@ -105,7 +105,7 @@ export class SearchService {
   /**
    * 点击搜索按钮调用的函数
    */
-  @autobind
+  @boundMethod
   public search() {
     this.resetPageNum();
     this.saveModelThenQuery();
@@ -114,7 +114,7 @@ export class SearchService {
   /**
    * 点击重置按钮调用的函数
    */
-  @autobind
+  @boundMethod
   public reset() {
     this.resetPageNum();
     this.resetPageSize();
@@ -125,7 +125,7 @@ export class SearchService {
   /**
    * 表格翻页时调用的函数
    */
-  @autobind
+  @boundMethod
   public onPageChange() {
     this.saveModelThenQuery();
   }
@@ -133,7 +133,7 @@ export class SearchService {
   /**
    * 修改表格分页大小时调用的函数
    */
-  @autobind
+  @boundMethod
   public onPageSizeChange() {
     this.resetPageNum();
     this.saveModelThenQuery();

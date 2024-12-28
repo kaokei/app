@@ -1,7 +1,6 @@
-import autobind from 'autobind-decorator';
+import { boundMethod } from 'autobind-decorator';
 import copy from 'copy-to-clipboard';
 import { useTemplateRef } from '#imports';
-import { isValidBase64 } from '~/utils/base64';
 
 export class UrlcodeService {
   public containerRef = useTemplateRef<HTMLDivElement>('container');
@@ -29,13 +28,13 @@ export class UrlcodeService {
     return decodeURIComponent(str);
   }
 
-  @autobind
+  @boundMethod
   public handleEncode() {
     this.decodeError = false;
     this.output = this.encode(this.input);
   }
 
-  @autobind
+  @boundMethod
   public handleDecode() {
     // decode需要特殊处理，可能不是有效的url encode字符串
     try {
@@ -47,19 +46,19 @@ export class UrlcodeService {
     }
   }
 
-  @autobind
+  @boundMethod
   public handleSwap() {
     const tmp = this.input;
     this.input = this.output;
     this.output = tmp;
   }
 
-  @autobind
+  @boundMethod
   public handleEmptyInput() {
     this.input = '';
   }
 
-  @autobind
+  @boundMethod
   public handleCopyInput() {
     copy(this.input);
     this.copyTooltipInput = '复制成功';
@@ -68,12 +67,12 @@ export class UrlcodeService {
     }, 2000);
   }
 
-  @autobind
+  @boundMethod
   public handleEmptyOutput() {
     this.output = '';
   }
 
-  @autobind
+  @boundMethod
   public handleCopyOutput() {
     copy(this.output);
     this.copyTooltipOutput = '复制成功';
@@ -82,7 +81,7 @@ export class UrlcodeService {
     }, 2000);
   }
 
-  @autobind
+  @boundMethod
   public handleMousedownInput() {
     if (
       this.textarea1Ref.value &&
@@ -102,7 +101,7 @@ export class UrlcodeService {
     }
   }
 
-  @autobind
+  @boundMethod
   public handleMousedownOutput() {
     if (
       this.textarea1Ref.value &&

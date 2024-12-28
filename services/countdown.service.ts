@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import { Injectable } from '@kaokei/use-vue-service';
 
 @Injectable()
@@ -37,7 +36,6 @@ export class CountdownService {
     }
   }
 
-  @autobind
   private countdown() {
     const now = this.getTime();
     const gap = now - this.startTime;

@@ -36,7 +36,11 @@ export default defineNuxtConfig({
     // },
     esbuild: {
       // https://github.com/nuxt/nuxt/issues/21756#issuecomment-1846568373
-      tsconfigRaw: {},
+      tsconfigRaw: {
+        compilerOptions: {
+          experimentalDecorators: true,
+        },
+      },
     },
     plugins: [
       ViteIcons({

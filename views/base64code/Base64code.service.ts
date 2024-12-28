@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator';
+import { boundMethod } from 'autobind-decorator';
 import copy from 'copy-to-clipboard';
 import Base64 from 'crypto-js/enc-base64';
 import Utf8 from 'crypto-js/enc-utf8';
@@ -16,14 +16,14 @@ export class Base64codeService {
   public copyTooltipOutput = '点击复制';
   public decodeError = false;
 
-  @autobind
+  @boundMethod
   public handleEncode() {
     const wordArray = Utf8.parse(this.input);
     this.decodeError = false;
     this.output = Base64.stringify(wordArray);
   }
 
-  @autobind
+  @boundMethod
   public handleDecode() {
     // decode需要特殊处理，可能不是有效的base64字符串
     if (isValidBase64(this.input)) {
@@ -41,19 +41,19 @@ export class Base64codeService {
     }
   }
 
-  @autobind
+  @boundMethod
   public handleSwap() {
     const tmp = this.input;
     this.input = this.output;
     this.output = tmp;
   }
 
-  @autobind
+  @boundMethod
   public handleEmptyInput() {
     this.input = '';
   }
 
-  @autobind
+  @boundMethod
   public handleCopyInput() {
     copy(this.input);
     this.copyTooltipInput = '复制成功';
@@ -62,12 +62,12 @@ export class Base64codeService {
     }, 2000);
   }
 
-  @autobind
+  @boundMethod
   public handleEmptyOutput() {
     this.output = '';
   }
 
-  @autobind
+  @boundMethod
   public handleCopyOutput() {
     copy(this.output);
     this.copyTooltipOutput = '复制成功';
@@ -76,7 +76,7 @@ export class Base64codeService {
     }, 2000);
   }
 
-  @autobind
+  @boundMethod
   public handleMousedownInput() {
     if (
       this.textarea1Ref.value &&
@@ -96,7 +96,7 @@ export class Base64codeService {
     }
   }
 
-  @autobind
+  @boundMethod
   public handleMousedownOutput() {
     if (
       this.textarea1Ref.value &&

@@ -40,9 +40,10 @@ const service = useService(UrlcodeService);
         </div>
         <textarea
           ref="textarea1"
+          v-focus
           v-model="service.input"
           placeholder="请输入任意文字"
-          class="textarea textarea-bordered block h-[calc(100%-theme(space.14))] min-h-48 w-full lg:min-h-144"
+          class="textarea textarea-bordered block h-[calc(100%-theme(space.14))] min-h-48 w-full focus:textarea-success lg:min-h-144"
           @mousedown="service.handleMousedownInput"
         ></textarea>
       </div>

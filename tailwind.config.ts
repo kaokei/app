@@ -3,7 +3,7 @@ import daisyui from 'daisyui';
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: [],
+  content: ['./views/**/*.{vue,ts}'],
   theme: {
     extend: {
       fontFamily: {

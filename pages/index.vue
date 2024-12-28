@@ -14,12 +14,7 @@ useSeoMeta({
       网上的工具经常会出现停止维护，无法访问的情况，每次都需要寻找新的工具。
     </p>
     <p>
-      <i-mdi-account />
-      <i-fa-solid-user-secret />
-      <i-fa6-solid:user-secret />
-      <i-material-symbols:10k />
-      <i-fa6-solid:apple-whole />
-      <i-fa6-solid:candy-cane />
+      <i-line-md:beer-alt-twotone-loop />
     </p>
   </div>
 </template>

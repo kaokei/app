@@ -12,6 +12,7 @@ declare module 'vue' {
     'IFa6Solid:userSecret': typeof import('~icons/fa6-solid/user-secret')['default']
     IFa6SolidAppleWhole: typeof import('~icons/fa6-solid/apple-whole')['default']
     IFaSolidUserSecret: typeof import('~icons/fa-solid/user-secret')['default']
+    'ILineMd:beerAltTwotoneLoop': typeof import('~icons/line-md/beer-alt-twotone-loop')['default']
     ILocalBar3: typeof import('~icons/local/bar3')['default']
     ILocalClear: typeof import('~icons/local/clear')['default']
     ILocalCopy: typeof import('~icons/local/copy')['default']

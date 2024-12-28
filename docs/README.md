@@ -73,3 +73,5 @@ https://blog.replit.com/code-editors
 https://toolbox.googleapps.com/apps/encode_decode/
 
 https://endecode.org/
+
+https://www.srihash.org/

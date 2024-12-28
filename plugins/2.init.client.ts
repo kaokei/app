@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { useRootService } from '@kaokei/use-vue-service';
 import { defineNuxtPlugin, useRoute, useRouter } from '#imports';
 import { RouterService } from '~/services/router.service';

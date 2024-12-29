@@ -1,8 +1,11 @@
 import { boundMethod } from 'autobind-decorator';
 import copy from 'copy-to-clipboard';
+import prettierPluginBabel from 'prettier/plugins/babel';
+import prettierPluginEstree from 'prettier/plugins/estree';
+import prettier from 'prettier/standalone';
 import { useTemplateRef } from '#imports';
 
-export class JsonlintService {
+export class JslintService {
   public containerRef = useTemplateRef<HTMLDivElement>('container');
   public textarea1Ref = useTemplateRef<HTMLTextAreaElement>('textarea1');
   public textarea2Ref = useTemplateRef<HTMLTextAreaElement>('textarea2');
@@ -14,36 +17,21 @@ export class JsonlintService {
   public decodeError = false;
 
   @boundMethod
-  public handleBeautify() {
+  public async handleBeautify() {
     if (this.input) {
       try {
-        const json = JSON.parse(this.input);
         this.decodeError = false;
-        this.output = JSON.stringify(json, null, 4);
+        this.output = await prettier.format(this.input, {
+          parser: 'babel',
+          plugins: [prettierPluginBabel, prettierPluginEstree],
+        });
       } catch (e) {
         this.decodeError = true;
-        this.output = `json解析异常，请检查输入。${e}`;
+        this.output = `js格式化异常，请检查输入。${e}`;
       }
     } else {
       this.decodeError = true;
-      this.output = '无效的json字符串';
-    }
-  }
-
-  @boundMethod
-  public handleEval() {
-    if (this.input) {
-      try {
-        const json = eval(`(${this.input})`);
-        this.decodeError = false;
-        this.output = JSON.stringify(json, null, 4);
-      } catch (e) {
-        this.decodeError = true;
-        this.output = `json解析异常，请检查输入。${e}`;
-      }
-    } else {
-      this.decodeError = true;
-      this.output = '无效的json字符串';
+      this.output = '无效的js字符串';
     }
   }
 
@@ -56,11 +44,11 @@ export class JsonlintService {
         this.output = JSON.stringify(json, null, 0);
       } catch (e) {
         this.decodeError = true;
-        this.output = `json解析异常，请检查输入。${e}`;
+        this.output = `js格式化异常，请检查输入。${e}`;
       }
     } else {
       this.decodeError = true;
-      this.output = '无效的json字符串';
+      this.output = '无效的js字符串';
     }
   }
 

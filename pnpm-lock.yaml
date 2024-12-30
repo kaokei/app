@@ -35,6 +35,9 @@ devDependencies:
   '@codemirror/state':
     specifier: ^6.5.0
     version: 6.5.0
+  '@codemirror/theme-one-dark':
+    specifier: ^6.1.2
+    version: 6.1.2
   '@codemirror/view':
     specifier: ^6.36.1
     version: 6.36.1
@@ -687,6 +690,15 @@ packages:
     resolution: {integrity: sha512-MwBHVK60IiIHDcoMet78lxt6iw5gJOGSbNbOIVBHWVXIH4/Nq1+GQgLLGgI1KlnN86WDXsPudVaqYHKBIx7Eyw==}
     dependencies:
       '@marijn/find-cluster-break': 1.0.2
+    dev: true
+
+  /@codemirror/theme-one-dark@6.1.2:
+    resolution: {integrity: sha512-F+sH0X16j/qFLMAfbciKTxVOwkdAS336b7AXTKOZhy8BR3eH/RelsnLgLFINrpST63mmN2OuwUt0W2ndUgYwUA==}
+    dependencies:
+      '@codemirror/language': 6.10.8
+      '@codemirror/state': 6.5.0
+      '@codemirror/view': 6.36.1
+      '@lezer/highlight': 1.2.1
     dev: true
 
   /@codemirror/view@6.36.1:

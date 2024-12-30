@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { declareProviders, useService } from '@kaokei/use-vue-service';
+import CMEditor from '~/components/CMEditor.vue';
 import { JslintService } from './Jslint.service';
 
 declareProviders([JslintService]);
@@ -38,14 +39,8 @@ const service = useService(JslintService);
             <span>清空</span>
           </button>
         </div>
-        <textarea
-          ref="textarea1"
-          v-focus
-          v-model="service.input"
-          placeholder="请输入任意文字"
-          class="textarea textarea-bordered block h-[calc(100%-theme(space.14))] min-h-48 w-full focus:textarea-success lg:min-h-144"
-          @mousedown="service.handleMousedownInput"
-        ></textarea>
+
+        <CMEditor v-model="service.input" placeholder="请输入任意文字" />
       </div>
       <div class="divider h-12 lg:divider-horizontal lg:h-auto lg:w-16">
         <button class="btn btn-primary" @click="service.handleBeautify">
@@ -77,17 +72,11 @@ const service = useService(JslintService);
             <span>清空</span>
           </button>
         </div>
-        <textarea
-          ref="textarea2"
-          readonly
+
+        <CMEditor
           v-model="service.output"
           placeholder="这里是编码/解码的结果"
-          class="textarea textarea-bordered block h-[calc(100%-theme(space.14))] min-h-144 w-full"
-          :class="[
-            service.decodeError ? 'textarea-error text-4xl text-danger' : '',
-          ]"
-          @mousedown="service.handleMousedownOutput"
-        ></textarea>
+        />
       </div>
     </div>
   </div>

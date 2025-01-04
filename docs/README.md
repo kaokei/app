@@ -75,3 +75,30 @@ https://toolbox.googleapps.com/apps/encode_decode/
 https://endecode.org/
 
 https://www.srihash.org/
+
+## 格式化代码的工具
+
+https://www.npmjs.com/package/js-beautify
+
+[prettier](https://prettier.io/docs/en/)
+
+## 代码压缩工具
+
+首先必须承认代码压缩和代码格式化不是一个库可以实现的，除了json比较特殊以外。
+
+[esbuild](https://www.npmjs.com/package/esbuild-wasm)
+
+[swc](https://swc.rs/docs/usage/wasm)
+
+[terser](https://www.npmjs.com/package/terser)
+```
+import { minify } from "terser";
+var code = "function add(first, second) { return first + second; }";
+var result = await minify(code, { sourceMap: true });
+console.log(result.code);  // minified output: function add(n,d){return n+d}
+console.log(result.map);  // source map
+```
+
+https://minify-css.com/
+
+https://minify-js.com/

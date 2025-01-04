@@ -79,7 +79,7 @@ export default defineNuxtConfig({
     dirs: [],
   },
   app: {
-    baseURL: '/tool/',
+    baseURL: '/app/',
     head: {
       title: 'kaokei',
       meta: [
